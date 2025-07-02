@@ -1,0 +1,67 @@
+{
+  "description": "Description",
+  "label": "Array Split",
+  "category": "Array",
+  "icon": {
+    "name": "SquareArrowOutsideIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "value",
+      "label": "Text Value to Split",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "The text value to split into an array."
+    },
+    {
+      "name": "trim",
+      "label": "Trim",
+      "meta": {
+        "type": "Boolean"
+      },
+      "info": "If true, trims the whitespace from the beginning and end of each element in the array."
+    },
+    {
+      "name": "removeEmpty",
+      "label": "Remove Empty",
+      "meta": {
+        "type": "Boolean"
+      },
+      "info": "If true, removes empty elements from the array."
+    },
+    {
+      "name": "delimiter",
+      "label": "Delimiter",
+      "meta": {
+        "type": "Text"  
+      },
+      "info": "The delimiter to split the text value by. Default is a comma."
+    },
+    {
+      "name": "logging",
+      "label": "Logging",
+      "meta": {
+        "type": "Boolean"
+      },
+      "advanced": true,
+      "info": "If true, logs the result to the console."
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Array",
+          "dataType": "INTEGER"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

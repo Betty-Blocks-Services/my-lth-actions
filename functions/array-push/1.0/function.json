@@ -1,0 +1,72 @@
+{
+  "description": "Description",
+  "label": "Array Push",
+  "category": "Array",
+  "icon": {
+    "name": "SquareArrowInsideIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "array",
+      "label": "Array",
+      "meta": {
+        "type": "Collection"
+      },
+      "info": "The array to push the new value into."
+    },
+    {
+      "name": "path",
+      "label": "Path",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "If the Target Collection is an array of objects, this is the path to the value to search for"
+    },
+    {
+      "name": "data",
+      "label": "Value",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The value to push into the array."
+    },
+    {
+      "name": "filter",
+      "label": "Filter existing values",
+      "meta": {
+        "type": "Boolean"
+      },
+      "info": "If true, the value will only be pushed if it is not already in the array."
+    },
+    {
+      "name": "logging",
+      "label": "Logging",
+      "meta": {
+        "type": "Boolean"
+      },
+      "advanced": true
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Array",
+          "dataType": "INTEGER"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

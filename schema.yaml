@@ -1,0 +1,144 @@
+openapi: 3.0.1
+info:
+  title: Custom SharePoint Drives API
+  version: 1.0.0
+
+servers:
+  - url: https://graph.microsoft.com/v1.0
+
+paths:
+  /sites/{siteId}/drives:
+    get:
+      summary: List drives in a site
+      parameters:
+        - name: siteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A list of drives
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DrivesResponse"
+
+  /drives/{driveId}/root/children:
+    get:
+      summary: List items in the root of a drive
+      parameters:
+        - name: driveId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A list of drive items
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ItemsResponse"
+
+components:
+  schemas:
+    DrivesResponse:
+      type: object
+      properties:
+        drives:
+          type: array
+          items:
+            $ref: "#/components/schemas/Drive"
+
+    Drive:
+      type: object
+      properties:
+        createdDateTime:
+          type: string
+          format: date-time
+        description:
+          type: string
+        id:
+          type: string
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+        name:
+          type: string
+        webUrl:
+          type: string
+          format: uri
+        driveType:
+          type: string
+        createdBy:
+          $ref: "#/components/schemas/IdentitySet"
+        lastModifiedBy:
+          $ref: "#/components/schemas/IdentitySet"
+        owner:
+          $ref: "#/components/schemas/IdentitySet"
+        quota:
+          $ref: "#/components/schemas/Quota"
+
+    ItemsResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: "#/components/schemas/DriveItem"
+
+    DriveItem:
+      type: object
+      properties:
+        "@microsoft.graph.downloadUrl":
+          type: string
+          format: uri
+        id:
+          type: string
+        name:
+          type: string
+        webUrl:
+          type: string
+          format: uri
+        createdDateTime:
+          type: string
+          format: date-time
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+        size:
+          type: integer
+        # …you can omit nested objects or treat them as generic maps…
+        createdBy:
+          type: object
+        lastModifiedBy:
+          type: object
+        parentReference:
+          type: object
+        file:
+          type: object
+
+    IdentitySet:
+      type: object
+      description: >
+        A set of identity objects (e.g. user, application).
+      properties:
+        user:
+          type: object
+        application:
+          type: object
+
+    Quota:
+      type: object
+      properties:
+        deleted:
+          type: integer
+        remaining:
+          type: integer
+        state:
+          type: string
+        used:
+          type: integer
+        total:
+          type: integer

@@ -1,0 +1,23 @@
+{
+  "description": "Description",
+  "label": "Sharepoint Find Drive By Id",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "libraryURL",
+      "label": "Library URL",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["STRING"]
+      }
+    }
+  ],
+  "yields": "NONE"
+}

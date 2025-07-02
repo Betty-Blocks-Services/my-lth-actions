@@ -1,0 +1,50 @@
+{
+  "description": "Description",
+  "label": "Array Combine",
+  "category": "Array",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "arrayA",
+      "label": "Array A",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["ARRAY"],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "arrayB",
+      "label": "Array B",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["ARRAY"],
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "schema",
+      "label": "Schema Model",
+      "meta": {
+        "type": "SchemaModel"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Output",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+
+  "yields": "NONE"
+}

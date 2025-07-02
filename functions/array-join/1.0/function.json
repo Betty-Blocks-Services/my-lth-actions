@@ -1,0 +1,58 @@
+{
+  "description": "Description",
+  "label": "Array Join",
+  "category": "Array",
+  "icon": {
+    "name": "TextIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "array",
+      "label": "Array",
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
+      } ,  
+      "info": "The array to join." 
+    },
+    {
+      "name": "separator",
+      "label": "Separator",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The separator to join the array with."
+    },
+    {
+      "name": "path",
+      "label": "Path",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "If the array is an array of objects, the path to join on. If not provided, the array will be joined directly."
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

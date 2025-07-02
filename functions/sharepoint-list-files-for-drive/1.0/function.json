@@ -1,0 +1,21 @@
+{
+  "description": "Description",
+  "label": "Sharepoint List Files For Drive",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "driveID",
+      "label": "Drive ID",
+      "meta": {
+        "type": "Value",
+        "validations": { "required": true },
+        "allowedKinds": ["STRING"]
+      }
+    }
+  ],
+  "yields": "NONE"
+}

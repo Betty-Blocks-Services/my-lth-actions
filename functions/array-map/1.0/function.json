@@ -1,0 +1,46 @@
+{
+  "description": "Maps an array to the specified path",
+  "label": "Array Map",
+  "category": "Array",
+  "icon": {
+    "name": "CustomModelIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "array",
+      "label": "Array",
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "path",
+      "label": "Path",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Array",
+          "dataType": "INTEGER"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

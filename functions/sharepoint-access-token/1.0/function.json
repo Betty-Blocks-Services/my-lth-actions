@@ -1,0 +1,32 @@
+{
+  "description": "Description",
+  "label": "Sharepoint Access Token",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "clientID",
+      "label": "Client ID",
+      "info": "Sharepoint Client ID",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["STRING"],
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "clientSecret",
+      "label": "Client Secret",
+      "info": "Sharepoint Client Secret",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["STRING"],
+        "validations": { "required": true }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
