@@ -15,6 +15,26 @@
         "validations": { "required": true },
         "allowedKinds": ["STRING"]
       }
+    },
+    {
+      "name": "schema",
+      "label": "Schema Model",
+      "meta": {
+        "type": "SchemaModel"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Output",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Array",
+          "dataType": "SCHEMA",
+          "schemaModel": "schema"
+        },
+        "validations": { "required": true }
+      }
     }
   ],
   "yields": "NONE"

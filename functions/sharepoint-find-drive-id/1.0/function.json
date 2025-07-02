@@ -1,6 +1,6 @@
 {
   "description": "Description",
-  "label": "Sharepoint Find Drive By Id",
+  "label": "Sharepoint Find Drive Id",
   "category": "Misc",
   "icon": {
     "name": "ActionsIcon",
@@ -16,6 +16,17 @@
           "required": true
         },
         "allowedKinds": ["STRING"]
+      }
+    },
+    {
+      "name": "result",
+      "label": "Output",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": { "required": true }
       }
     }
   ],

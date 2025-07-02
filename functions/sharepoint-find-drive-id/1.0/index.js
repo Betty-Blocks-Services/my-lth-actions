@@ -28,6 +28,7 @@ const sharepointFindDriveById = async ({ libraryURL }) => {
     return drive.id;
   } catch (err) {
     const message = `Unable to find drive by ID: ${err.message}`;
+    throw new Error(message);
   }
 };
 
