@@ -11,3 +11,7 @@ npm install
 ```bash
 bb functions publish
 ```
+
+## Docs
+
+See [Betty Blocks CLI: Functions](https://github.com/bettyblocks/cli/wiki/Functions:Commands)
