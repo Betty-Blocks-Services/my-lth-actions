@@ -8,14 +8,23 @@
   },
   "options": [
     {
+      "name": "accessToken",
+      "label": "Access Token",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
       "name": "libraryURL",
       "label": "Library URL",
       "meta": {
-        "type": "Value",
+        "type": "Text",
         "validations": {
           "required": true
-        },
-        "allowedKinds": ["STRING"]
+        }
       }
     },
     {

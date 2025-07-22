@@ -6,7 +6,8 @@ const travelPath = (object, path) => {
   }
   return result;
 };
-const arrayFilter = async ({ array, path, value, operator }) => {
+const arrayFilter = async ({ array, path, value, operator, valueIsDate }) => {
+  console.log({ array });
   if (!array || !path || !value || !operator) {
     console.log({ array, path, value, operator });
     throw new Error(
@@ -29,13 +30,30 @@ const arrayFilter = async ({ array, path, value, operator }) => {
   }
   const result = array.filter((item) => {
     if (typeof item === "string") {
+      if (valueIsDate) {
+        const itemAsDate = new Date(item).getTime();
+        console.log(new Date(item));
+        const valueAsDate =
+          typeof value === "number" ? value : new Date(value).getTime();
+
+        return filterFn(itemAsDate, valueAsDate);
+      }
       return filterFn(item, value);
     }
     if (typeof item === "number") {
       return filterFn(item, Number(value));
     }
     const itemValue = travelPath(item, path);
+
     if (typeof itemValue === "string") {
+      if (valueIsDate) {
+        console.log(new Date(itemValue));
+        const itemAsDate = new Date(itemValue).getTime();
+        const valueAsDate =
+          typeof value === "number" ? value : new Date(value).getTime();
+        return filterFn(itemAsDate, valueAsDate);
+      }
+
       return filterFn(itemValue, value);
     }
     if (typeof itemValue === "number") {

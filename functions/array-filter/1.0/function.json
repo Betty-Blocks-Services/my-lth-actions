@@ -43,6 +43,14 @@
       "info": "The condition to filter on. For example, 'value > 10'"
     },
     {
+      "name": "valueIsDate",
+      "label": "Value is date",
+      "meta": {
+        "type": "Boolean"
+      },
+      "info": "Whether to compare the values as dates. "
+    },
+    {
       "name": "operator",
       "label": "Operator",
       "meta": {

@@ -1,0 +1,33 @@
+{
+  "description": "Description",
+  "label": "Sharepoint Download File",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "fileURL",
+      "label": "File URL",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "label": "Output",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": { "required": true }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

@@ -1,6 +1,6 @@
-const sharepointAccessToken = async ({ clientId, clientSecret }) => {
+const sharepointAccessToken = async ({ clientID, clientSecret }) => {
   try {
-    if (!clientId) {
+    if (!clientID) {
       throw new Error("Client ID is required to access Sharepoint");
     }
     if (!clientSecret) {
@@ -9,18 +9,20 @@ const sharepointAccessToken = async ({ clientId, clientSecret }) => {
 
     const tokenUrl = `https://login.microsoftonline.com/lthc.onmicrosoft.com/oauth2/v2.0/token`;
 
-    // Use URLSearchParams for form-urlencoded body
-    const params = new URLSearchParams({
-      client_id: clientId,
-      client_secret: clientSecret,
-      scope: "https://graph.microsoft.com/.default",
-      grant_type: "client_credentials",
-    });
+    const bodyEntries = [
+      ["client_id", clientID],
+      ["client_secret", clientSecret],
+      ["scope", "https://graph.microsoft.com/.default"],
+      ["grant_type", "client_credentials"],
+    ];
+    const body = bodyEntries
+      .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+      .join("&");
 
     const res = await fetch(tokenUrl, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params.toString(),
+      body,
     });
 
     if (!res.ok) {
@@ -29,8 +31,8 @@ const sharepointAccessToken = async ({ clientId, clientSecret }) => {
     }
 
     const data = await res.json();
-    console.log({ tokenResponse: data });
-    return data.access_token;
+
+    return { result: data.access_token };
   } catch (err) {
     const message = `Unable to get sharepoint access token: ${err.message}`;
     throw new Error(message);

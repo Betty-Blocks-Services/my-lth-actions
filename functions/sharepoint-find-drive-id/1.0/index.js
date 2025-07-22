@@ -1,5 +1,8 @@
-const sharepointFindDriveById = async ({ libraryURL }) => {
+const sharepointFindDriveById = async ({ libraryURL, accessToken }) => {
   try {
+    if (!accessToken) {
+      throw new Error("Access token is required");
+    }
     if (!libraryURL) {
       throw new Error("Please provide a library URL");
     }
@@ -25,7 +28,7 @@ const sharepointFindDriveById = async ({ libraryURL }) => {
         `SharePoint Library under ${libraryURL} could not be found.`,
       );
     }
-    return drive.id;
+    return { result: drive.id };
   } catch (err) {
     const message = `Unable to find drive by ID: ${err.message}`;
     throw new Error(message);

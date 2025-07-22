@@ -1,4 +1,4 @@
-const sharepointListFilesForDrive = async ({ driveID }) => {
+const sharepointListFilesForDrive = async ({ driveID, accessToken }) => {
   try {
     const listUrl = `https://graph.microsoft.com/v1.0/drives/${driveID}/root/children`;
     const res = await fetch(listUrl, {

@@ -1,0 +1,74 @@
+{
+  "description": "Description",
+  "label": "Array Reduce",
+  "category": "Array",
+  "icon": {
+    "name": "MergeIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "array",
+      "label": "Array",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["ARRAY", "COLLECTION"],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "path",
+      "label": "Path",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "If the array is an array of objects, provide the path to the property to filter on. Separate nested properties with a dot. For example, 'user.name'"
+    },
+    {
+      "name": "reducer",
+      "label": "Reducer",
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "label": "Sum", "value": "sum" },
+          { "label": "Min", "value": "min" },
+          { "label": "Max", "value": "max" },
+          { "label": "Concat", "value": "concat" }
+        ],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "schemaModel",
+      "label": "Schema Model",
+      "meta": {
+        "type": "SchemaModel"
+      },
+      "info": "The schema model to use for the output array"
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "anyOf": [
+            {
+              "type": "Number"
+            },
+            {
+              "type": "Array",
+              "schemaModel": "schemaModel",
+              "dataType": "SCHEMA"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

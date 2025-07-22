@@ -8,6 +8,16 @@
   },
   "options": [
     {
+      "name": "accessToken",
+      "label": "Access Token",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
       "name": "driveID",
       "label": "Drive ID",
       "meta": {
