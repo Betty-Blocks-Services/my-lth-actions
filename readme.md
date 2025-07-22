@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm run install
+npm install
 ```
 
 ## Publish
