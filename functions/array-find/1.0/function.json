@@ -98,8 +98,12 @@
         "type": "Output",
         "output": {
           "anyOf": [
-            { "type": "Object", "schemaModel": "schema" },
-            { "type": "Array", "dataType": "SCHEMA", "schemaModel": "schema" },
+            { "type": "Object", "schemaModel": "schemaModel" },
+            {
+              "type": "Array",
+              "dataType": "SCHEMA",
+              "schemaModel": "schemaModel"
+            },
             { "type": "Text" },
             { "type": "Boolean" },
             { "type": "Number" }
